@@ -2,6 +2,8 @@
 from __future__ import print_function
 
 from gilded_rose import *
+from item import Item
+from item_factory import ItemFactory
 
 if __name__ == "__main__":
     print ("OMGHAI!")
@@ -16,6 +18,7 @@ if __name__ == "__main__":
              Item(name="Backstage passes to a TAFKAL80ETC concert", sell_in=5, quality=49),
              Item(name="Conjured Mana Cake", sell_in=3, quality=6),  # <-- :O
             ]
+    items = [ItemFactory.categorizedItem_from_Item(item) for item in items]
 
     days = 2
     import sys
