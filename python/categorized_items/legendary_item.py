@@ -8,4 +8,7 @@ class LegendaryItem(CategorizedItem):
     def update_quality(self):
         pass
 
+    def update_sell_in(self):
+        pass
+
 

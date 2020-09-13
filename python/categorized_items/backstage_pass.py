@@ -5,20 +5,22 @@ class BackstagePass(CategorizedItem):
     def __init__(self, item):
         super().__init__(item)
 
-    def update_quality(self):
-        amount_to_increase = self._calculate_amount_to_increase()
-        self.increase_quality(amount_to_increase)
-
+    def update_sell_in(self):
         self.decrease_sell_in()
-        if self.sell_in < 0:
+
+    def update_quality(self):
+        if self.sell_in >= 0:
+            quality_increment = self._calculate_quality_increment()
+            self.increase_quality(quality_increment)
+        else:
             self.quality = 0
 
-    def _calculate_amount_to_increase(self):
-        amount_to_increase = 1
-        if self.sell_in < 11:
-            amount_to_increase += 1
-        if self.sell_in < 6:
-            amount_to_increase += 1
-        return amount_to_increase
+    def _calculate_quality_increment(self):
+        quality_increment = 1
+        if self.sell_in < 10:
+            quality_increment += 1
+        if self.sell_in < 5:
+            quality_increment += 1
+        return quality_increment
 
 
