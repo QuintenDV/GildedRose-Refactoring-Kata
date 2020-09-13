@@ -3,11 +3,13 @@ from categorized_items.normal_item import NormalItem
 from categorized_items.backstage_pass import BackstagePass
 from categorized_items.legendary_item import LegendaryItem
 from categorized_items.well_aging_cheese import WellAgingCheese
+from categorized_items.conjured_item import ConjuredItem
 
 SPECIAL_ITEMS = {
     "Backstage passes to a TAFKAL80ETC concert": BackstagePass,
     "Sulfuras, Hand of Ragnaros": LegendaryItem,
     "Aged Brie": WellAgingCheese,
+    "Conjured example item": ConjuredItem,
 }
 
 class CategorizedItemFactory:
