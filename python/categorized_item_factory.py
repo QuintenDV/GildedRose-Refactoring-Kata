@@ -13,9 +13,21 @@ SPECIAL_ITEMS = {
 }
 
 class CategorizedItemFactory:
-    @classmethod
-    def from_item(cls, item):
-        categorized_item_class = SPECIAL_ITEMS.get(item.name, NormalItem)
-        categorized_item = categorized_item_class(item)
-        return categorized_item
+    def _from_item_prefix(item):
+        if item.name.startswith("Backstage passes"):
+            return BackstagePass(item)
+        if item.name.startswith("Conjured"):
+            return ConjuredItem(item)
+        return None
 
+    def _from_special_item_list(item):
+        categorized_item_class = SPECIAL_ITEMS.get(item.name, NormalItem)
+        return categorized_item_class(item)
+
+    def from_item(item):
+        categorized_item = CategorizedItemFactory._from_item_prefix(item)
+        if categorized_item != None:
+            return categorized_item
+
+        categorized_item = CategorizedItemFactory._from_special_item_list(item)
+        return categorized_item

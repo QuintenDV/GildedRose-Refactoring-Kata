@@ -9,7 +9,7 @@ class NormalItem(CategorizedItem):
         self.decrease_sell_in()
 
     def update_quality(self):
-        if self.sell_in < 0:
+        if self.get_sell_in() < 0:
             self.decrease_quality()
         self.decrease_quality()
 

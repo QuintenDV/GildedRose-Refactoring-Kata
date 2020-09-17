@@ -2,23 +2,35 @@
 from abc import ABC, abstractmethod
 from item import Item
 
-class CategorizedItem(Item, ABC):
+class CategorizedItem(ABC):
 
     MAX_QUALITY = 50
 
     def __init__(self, item):
-        super().__init__(item.name, item.sell_in, item.quality)
+        self.item = item
 
     def increase_quality(self, amount_to_increase=1):
-        self.quality += amount_to_increase
-        self.quality = min(self.quality, CategorizedItem.MAX_QUALITY)
+        self.item.quality += amount_to_increase
+        self.item.quality = min(self.item.quality, CategorizedItem.MAX_QUALITY)
 
     def decrease_quality(self, amount_to_decrease=1):
-        self.quality -= amount_to_decrease
-        self.quality = max(self.quality, 0)
+        self.item.quality -= amount_to_decrease
+        self.item.quality = max(self.item.quality, 0)
 
     def decrease_sell_in(self):
-        self.sell_in -= 1
+        self.item.sell_in -= 1
+
+    def get_sell_in(self):
+        return self.item.sell_in
+
+    def get_quality(self):
+        return self.item.quality
+
+    def set_sell_in(self, new_sell_in):
+        self.item.sell_in = new_sell_in
+
+    def set_quality(self, new_quality):
+        self.item.quality = new_quality
 
     @abstractmethod
     def update_quality(self):

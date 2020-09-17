@@ -9,17 +9,17 @@ class BackstagePass(CategorizedItem):
         self.decrease_sell_in()
 
     def update_quality(self):
-        if self.sell_in >= 0:
+        if self.get_sell_in() >= 0:
             quality_increment = self._calculate_quality_increment()
             self.increase_quality(quality_increment)
         else:
-            self.quality = 0
+            self.set_quality(0)
 
     def _calculate_quality_increment(self):
         quality_increment = 1
-        if self.sell_in < 10:
+        if self.get_sell_in() < 10:
             quality_increment += 1
-        if self.sell_in < 5:
+        if self.get_sell_in() < 5:
             quality_increment += 1
         return quality_increment
 
