@@ -1,0 +1,9 @@
+.idea
+.vs
+cmake-build-debug
+build
+src/CMakeFiles/
+CMakeCache.txt
+test/cpp_texttest/*
+test/cpp_catch2_*/*
+test/cpp_*_approvaltest/*
