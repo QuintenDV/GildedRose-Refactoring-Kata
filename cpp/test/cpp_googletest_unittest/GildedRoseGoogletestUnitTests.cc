@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include "GildedRose.h"
+#include "Item.h"
 
 void runGildedRose(vector<Item> itemsBeforeTest, vector<Item> targetItems, int nIterations){
     GildedRose app(itemsBeforeTest);

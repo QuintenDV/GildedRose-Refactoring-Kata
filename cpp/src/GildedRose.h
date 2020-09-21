@@ -1,24 +1,26 @@
+#ifndef GILDED_ROSE_H
+#define GILDED_ROSE_H
+
 #include <string>
 #include <vector>
 
-using namespace std;
+#include "Item.h"
+#include "CategorizedItem.h"
 
-class Item
-{
-public:
-    string name;
-    int sellIn;
-    int quality;
-    Item(string name, int sellIn, int quality) : name(name), sellIn(sellIn), quality(quality) 
-    {}
-};
+using namespace std;
 
 class GildedRose
 {
 public:
     vector<Item> & items;
     GildedRose(vector<Item> & items);
-    
+
     void updateQuality();
+
+private:
+    void updateSingleItem(Item *item);
+    void updateSingleCategorizedItem(CategorizedItem *item);
+    vector<CategorizedItem*> categorizedItems;
 };
 
+#endif
