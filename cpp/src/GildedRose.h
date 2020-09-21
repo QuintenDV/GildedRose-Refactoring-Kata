@@ -1,7 +1,6 @@
 #ifndef GILDED_ROSE_H
 #define GILDED_ROSE_H
 
-#include <string>
 #include <vector>
 
 #include "Item.h"
@@ -18,8 +17,7 @@ public:
     void updateQuality();
 
 private:
-    void updateSingleItem(Item *item);
-    void updateSingleCategorizedItem(CategorizedItem *item);
+    void updateSingleItem(CategorizedItem *item);
     vector<CategorizedItem*> categorizedItems;
 };
 
