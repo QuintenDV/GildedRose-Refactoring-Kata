@@ -1,5 +1,10 @@
 # C++ version of Gilded Rose refactoring kata
 
+## Remarks
+* Work in progress.
+* It doesn't seem right that _Inventory_ is a separate class. Maybe I should merge it into the CatItemFactory.
+* Might do some renaming, for example Inventory and CategorizedItem
+
 ## Introduction
 The C++ version of the Gilded Rose refactoring kata is available in four variants using different test frameworks:
 
@@ -58,7 +63,7 @@ The `GildedRose.cc` file, i.e. the code under test, is identical in all four var
 4. Select menu `Run - Run...`
 4. Select what test variant to run, e.g. `GildedRoseCatch2ApprovalTests`.
 
-## How to build and run tests using Visual Studio 2019 
+## How to build and run tests using Visual Studio 2019
 
 1. Start Visual Studio 2019
 2. Select `Open a local folder`

@@ -6,6 +6,7 @@
 #include "categorized_items/BackstagePass.cc"
 #include "categorized_items/AgedCheese.cc"
 #include "categorized_items/LegendaryItem.cc"
+#include "categorized_items/ConjuredItem.cc"
 #include "Inventory.cc"
 
 using namespace std;
@@ -17,7 +18,7 @@ CategorizedItem* CategorizedItemFactory::fromItem(Item &item){
         return new BackstagePass(item);
     }
     if (CategorizedItemFactory::itemNameStartsWith(item, "Conjured")){
-        return new NormalItem(item);
+        return new ConjuredItem(item);
     }
 
     if (inventory.isAgedCheese(item.name)){
