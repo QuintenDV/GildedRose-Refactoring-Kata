@@ -68,3 +68,15 @@ TEST(GildedRoseTest, BackstagePasses) {
 
     runGildedRose(itemsBeforeTest, targetItems, 5);
 }
+
+TEST(GildedRoseTest, ConjuredItems) {
+    vector<Item> itemsBeforeTest;
+    itemsBeforeTest.push_back(Item("Conjured Mana Cake",10,20));
+    itemsBeforeTest.push_back(Item("Conjured Wooden Stick",2,20));
+
+    vector<Item> targetItems;
+    targetItems.push_back(Item("Conjured Mana Cake",5,10));
+    targetItems.push_back(Item("Conjured Wooden Stick",-3,4));
+
+    runGildedRose(itemsBeforeTest, targetItems, 5);
+}
