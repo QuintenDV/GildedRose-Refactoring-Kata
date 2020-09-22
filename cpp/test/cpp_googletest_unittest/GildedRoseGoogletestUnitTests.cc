@@ -56,15 +56,15 @@ TEST(GildedRoseTest, WellAgingCheese) {
 TEST(GildedRoseTest, BackstagePasses) {
     vector<Item> itemsBeforeTest;
     itemsBeforeTest.push_back(Item("Backstage passes to a TAFKAL80ETC concert", 15, 20));
-    // itemsBeforeTest.push_back(Item("Backstage passes to an Iron Maiden concert", 12, 10));
-    // itemsBeforeTest.push_back(Item("Backstage passes to a Slayer concert", 7, 10));
-    // itemsBeforeTest.push_back(Item("Backstage passes to a Taylor Swift concert", 2, 49));
+    itemsBeforeTest.push_back(Item("Backstage passes to an Iron Maiden concert", 12, 10));
+    itemsBeforeTest.push_back(Item("Backstage passes to a Slayer concert", 7, 10));
+    itemsBeforeTest.push_back(Item("Backstage passes to a Taylor Swift concert", 2, 49));
 
     vector<Item> targetItems;
     targetItems.push_back(Item("Backstage passes to a TAFKAL80ETC concert", 10, 25));
-    // targetItems.push_back(Item("Backstage passes to an Iron Maiden concert", 7, 18));
-    // targetItems.push_back(Item("Backstage passes to a Slayer concert", 2, 23));
-    // targetItems.push_back(Item("Backstage passes to a Taylor Swift concert", -3, 0));
+    targetItems.push_back(Item("Backstage passes to an Iron Maiden concert", 7, 18));
+    targetItems.push_back(Item("Backstage passes to a Slayer concert", 2, 23));
+    targetItems.push_back(Item("Backstage passes to a Taylor Swift concert", -3, 0));
 
     runGildedRose(itemsBeforeTest, targetItems, 5);
 }

@@ -6,8 +6,11 @@
 #include "categorized_items/BackstagePass.cc"
 #include "categorized_items/AgedCheese.cc"
 #include "categorized_items/LegendaryItem.cc"
+#include "Inventory.cc"
 
 using namespace std;
+
+Inventory CategorizedItemFactory::inventory = Inventory();
 
 CategorizedItem* CategorizedItemFactory::fromItem(Item &item){
     if (CategorizedItemFactory::itemNameStartsWith(item, "Backstage passes")){
@@ -17,14 +20,13 @@ CategorizedItem* CategorizedItemFactory::fromItem(Item &item){
         return new NormalItem(item);
     }
 
-    // Hardcoded stuff
-    if (CategorizedItemFactory::itemNameStartsWith(item, "Aged Brie")){
+    if (inventory.isAgedCheese(item.name)){
         return new AgedCheese(item);
     }
-    if (CategorizedItemFactory::itemNameStartsWith(item, "Sulfuras")){
+    if (inventory.isLegendary(item.name)){
         return new LegendaryItem(item);
     }
-    //
+
     return new NormalItem(item);
 }
 
