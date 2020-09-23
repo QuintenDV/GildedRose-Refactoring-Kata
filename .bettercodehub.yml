@@ -1,0 +1,7 @@
+exclude:
+- /cpp/lib/.*
+- /cpp/build/.*
+component_depth: 1
+languages:
+- python
+- cpp
