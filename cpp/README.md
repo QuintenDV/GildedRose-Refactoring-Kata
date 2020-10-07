@@ -2,6 +2,11 @@
 
 ## Remarks
 * Work in progress.
+* Add destructor
+* Think about copy constructor and copy-assigment operator
+* make constructors explicit
+* use pass-by-reference instead of pass-by-pointer
+* add `const` where applicable
 * It doesn't seem right that _Inventory_ is a separate class. Maybe I should merge it into the CatItemFactory.
 * Might do some renaming, for example Inventory and CategorizedItem
 
